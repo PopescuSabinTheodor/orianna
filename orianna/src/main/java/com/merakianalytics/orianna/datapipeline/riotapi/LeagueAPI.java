@@ -157,8 +157,8 @@ public class LeagueAPI extends RiotAPIService {
             public SummonerPositions next() {
                 final String summonerId = iterator.next();
 
-                final String endpoint = "lol/league/v4/positions/by-summoner/" + summonerId;
-                final SummonerPositions data = get(SummonerPositions.class, endpoint, platform, "lol/league/v4/positions/by-summoner/summonerId");
+                final String endpoint = "lol/league/v4/entries/by-summoner/" + summonerId;
+                final SummonerPositions data = get(SummonerPositions.class, endpoint, platform, "lol/league/v4/entries/by-summoner/summonerId");
                 if(data == null) {
                     return null;
                 }
@@ -184,8 +184,8 @@ public class LeagueAPI extends RiotAPIService {
         final String summonerId = (String)query.get("summonerId");
         Utilities.checkNotNull(platform, "platform", summonerId, "summonerId");
 
-        final String endpoint = "lol/league/v4/positions/by-summoner/" + summonerId;
-        final SummonerPositions data = get(SummonerPositions.class, endpoint, platform, "lol/league/v4/positions/by-summoner/summonerId");
+        final String endpoint = "lol/league/v4/entries/by-summoner/" + summonerId;
+        final SummonerPositions data = get(SummonerPositions.class, endpoint, platform, "lol/league/v4/entries/by-summoner/summonerId");
         if(data == null) {
             return null;
         }
